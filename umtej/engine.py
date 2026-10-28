@@ -1,4 +1,5 @@
-"""UMTEJ educational justice engine (mock)."""
-
-def compute_equity(scores):
-    return sum(scores)/len(scores) if scores else 0.0
+﻿def calculate_justice_index(weights: list) -> float:
+    """
+    Calculates the foundational UMTEJ Educational Justice Index score.
+    """
+    return float(sum(weights))
