@@ -6,3 +6,4 @@ pytest
 scikit-learn
 sdv
 fairlearn
+rdflib>=7.0,<8
