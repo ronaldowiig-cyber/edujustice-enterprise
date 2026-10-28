@@ -1,0 +1,3 @@
+@prefix ej: <http://example.org/ej#> .
+ej:Student a ej:Class .
+ej:Entitlement a ej:Class .
