@@ -1,3 +1,55 @@
-<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <!-- Educational Justice Ontology (mock) -->
+﻿<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/edujustice/ontology#"
+     xml:base="http://www.semanticweb.org/edujustice/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <owl:Ontology rdf:about="http://www.semanticweb.org/edujustice/ontology">
+        <rdfs:comment>IEJS and SMART UMTEJ Educational Justice Ontology Framework</rdfs:comment>
+        <owl:versionInfo>1.0.0</owl:versionInfo>
+    </owl:Ontology>
+
+    <!-- Base Classes -->
+    <owl:Class rdf:about="http://www.semanticweb.org/edujustice/ontology#Stakeholder"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/edujustice/ontology#EducationalResource"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/edujustice/ontology#DisparityDimension"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/edujustice/ontology#JusticePrinciple"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/edujustice/ontology#Intervention"/>
+
+    <!-- Disparity Subclasses (UMTEJ Focus) -->
+    <owl:Class rdf:about="http://www.semanticweb.org/edujustice/ontology#DigitalDisparity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edujustice/ontology#DisparityDimension"/>
+        <rdfs:label>Digital Disparity Dimension</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/edujustice/ontology#SocioEconomicDisparity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edujustice/ontology#DisparityDimension"/>
+        <rdfs:label>Socio-Economic Disparity Dimension</rdfs:label>
+    </owl:Class>
+
+    <!-- Justice Principle Subclasses (Rawls, Fraser, Islamic Ethics) -->
+    <owl:Class rdf:about="http://www.semanticweb.org/edujustice/ontology#IslamicRawlsianJustice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edujustice/ontology#JusticePrinciple"/>
+        <rdfs:label>Synthesized Islamic & Rawlsian Distributive Justice</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.semanticweb.org/edujustice/ontology#AlgorithmicFairness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/edujustice/ontology#JusticePrinciple"/>
+        <rdfs:label>SMART UMTEJ Algorithmic Equity</rdfs:label>
+    </owl:Class>
+
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/edujustice/ontology#experiencesDisparity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/edujustice/ontology#Stakeholder"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/edujustice/ontology#DisparityDimension"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/edujustice/ontology#mitigatedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/edujustice/ontology#DisparityDimension"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/edujustice/ontology#Intervention"/>
+    </owl:ObjectProperty>
+
 </rdf:RDF>
